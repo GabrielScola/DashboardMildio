@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+<h2>@ViewBag.Title</h2>
+<center><div class="warning"><br /></div></center>
+<!-- Small boxes (Stat box) -->
+<div class="row">
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>18ºC</h3>
+
+                <p>Temperatura mínima</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-temperature-low"></i>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>23ºC</h3>
+
+                <p>Temperatura máxima</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-temperature-high"></i>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>2h</h3>
+
+                <p>Solo molhado</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-water"></i>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3>98<sup style="font-size: 20px">%</sup></h3>
+
+                <p>Umidade do ar</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-arrow-alt-circle-up"></i>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+<!-- /.row -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <!-- interactive chart -->
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="far fa-chart-bar"></i>
+                            Controle de umidade do ar
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="interactive" style="height: 387px;"></div>
+                    </div>
+                    <!-- /.card-body-->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <div class="col-4">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-cloud-sun"></i>
+                            Temperatura
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="city"></div>
+                        <div class="date"></div>
+                        <div class="container-img"></div>
+                        <div class="container-temp mx-4 my-3">
+                            <div>22</div>
+                            <span>°c</span>
+                        </div>
+                        <div class="weather py-2">Nublado</div>
+                        <div class="low-high">16°c / 23°c</div>
+                        <div class="umidade"></div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</section>

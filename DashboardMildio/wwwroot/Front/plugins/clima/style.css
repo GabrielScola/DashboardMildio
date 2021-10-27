@@ -1,0 +1,49 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+body {
+	font-family: 'Arvo', serif;
+}
+
+.city {
+	font-size: 25px;
+}
+
+.date {
+	font-size: 16px;
+}
+
+.container-img {
+	display: flex;
+	justify-content: center;
+}
+
+.container-temp {
+	display: flex;
+	justify-content: center;
+	font-size: 50px;
+	font-weight: 900;
+	text-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather {
+	display: flex;
+	justify-content: center;
+	font-size: 25px;
+}
+
+.low-high {
+	display: flex;
+	justify-content: center;
+	font-size: 13px;
+}
+
+.umidade {
+	display: flex;
+	justify-content: center;
+	font-size: 13px;
+}
+
+.warning {
+	display: inline-flex;
+	justify-content: center;
+}
