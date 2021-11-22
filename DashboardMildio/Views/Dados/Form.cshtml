@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Enviar dados";
+}
+
+<h1>Formulário</h1>
+
+<div class="card container">
+    <div class="card-body">
+        <form method="POST" action="/dados/cadastrar">
+            <br />
+            <label for="temperatura">Temperatura</label>
+            <input type="number" id="temperatura" value="@ViewBag.Data.Temperatura" name="dados.Temperatura" required />
+            @Html.ValidationMessage("dados.Temperatura")
+            <br />
+            <label for="chuva">Tempo de chuva</label>
+            <input id="chuva" type="number" value="@ViewBag.Data.Chuva" name="dados.Chuva" required />
+            <br />
+            @Html.ValidationMessage("dados.Chuva")
+            <label for="humidade">Humidade</label>
+            <input id="humidade" type="number" value="@ViewBag.Data.Humidade" name="dados.Humidade" required />
+            @Html.ValidationMessage("dados.Humidade")
+            <br />
+            <input type="submit" value="Cadastrar" />
+        </form>
+    </div>
+</div>

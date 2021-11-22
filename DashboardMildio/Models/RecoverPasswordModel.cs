@@ -5,10 +5,10 @@ namespace DashboardMildio.Models
 {
     public class RecoverPasswordModel
     {
-        [Required]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string senha { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string confirmarSenha { get; set; }
 
     }

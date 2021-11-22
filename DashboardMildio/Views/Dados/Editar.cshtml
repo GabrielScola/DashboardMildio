@@ -1,0 +1,30 @@
+@model DadosModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<div class="card container">
+    <div class="card-body">
+        <form method="POST" action="/dados/cadastrar">
+            <br />
+            <input type="hidden" value="@Model.Id" name="produto.Id" />
+
+            <label for="temperatura">Temperatura</label>
+            <input type="number" id="temperatura" value="@Model.Temperatura" name="dados.Temperatura" required />
+            @Html.ValidationMessage("dados.Temperatura")
+            <br />
+            <label for="chuva">Tempo de chuva</label>
+            <input id="chuva" type="number" value="@Model.Chuva" name="dados.Chuva" required />
+            <br />
+            @Html.ValidationMessage("dados.Chuva")
+            <label for="humidade">Humidade</label>
+            <input id="humidade" type="number" value="@Model.Humidade" name="dados.Humidade" required />
+            @Html.ValidationMessage("dados.Humidade")
+            <br />
+            <input type="submit" value="Alterar" />
+        </form>
+    </div>
+</div>

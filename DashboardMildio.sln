@@ -3,7 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardMildio", "DashboardMildio\DashboardMildio.csproj", "{FDE4EBD0-56B5-4EBD-B8F1-A44CC13785DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardMildio", "DashboardMildio\DashboardMildio.csproj", "{FDE4EBD0-56B5-4EBD-B8F1-A44CC13785DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0- FrontEnd", "0- FrontEnd", "{041D5113-5A0E-4DD2-A250-87F012A6F741}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- WebService", "1- WebService", "{07FD5F7A-43E6-4DC9-B89B-02709CB8154C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Application", "2- Application", "{B45C79D5-75C8-4787-B35C-044FA6F23F59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Domain", "3- Domain", "{AF23B3FA-6DBE-4D32-B1F3-B14F9660AE39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Infra", "4- Infra", "{ADA301D4-394A-4E6B-BE4B-838BBA373258}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalServices", "ExternalServices", "{B40CE5D3-08D8-4D5D-BA1A-8F3FB3673C43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{4FA7B3FD-4552-4263-B63A-B4668E1271B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardMildio.Api", "DashboardMildio.Api\DashboardMildio.Api.csproj", "{72F3C951-2E43-46D7-8E04-C2016F8BD33A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardMildio.Application", "DashboardMildio.Application\DashboardMildio.Application.csproj", "{5431B6FE-9593-4FFE-AABF-9748E21AD41F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardMildio.Domain", "DashboardMildio.Domain\DashboardMildio.Domain.csproj", "{3A365B4C-7A69-431B-86F1-AA3111D2BEB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardMildio.Repository", "DashboardMildio.Repository\DashboardMildio.Repository.csproj", "{D244981F-A317-4D47-92A4-C02BE3BBC5E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +37,34 @@ Global
 		{FDE4EBD0-56B5-4EBD-B8F1-A44CC13785DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDE4EBD0-56B5-4EBD-B8F1-A44CC13785DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDE4EBD0-56B5-4EBD-B8F1-A44CC13785DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F3C951-2E43-46D7-8E04-C2016F8BD33A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F3C951-2E43-46D7-8E04-C2016F8BD33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F3C951-2E43-46D7-8E04-C2016F8BD33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F3C951-2E43-46D7-8E04-C2016F8BD33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5431B6FE-9593-4FFE-AABF-9748E21AD41F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5431B6FE-9593-4FFE-AABF-9748E21AD41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5431B6FE-9593-4FFE-AABF-9748E21AD41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5431B6FE-9593-4FFE-AABF-9748E21AD41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A365B4C-7A69-431B-86F1-AA3111D2BEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A365B4C-7A69-431B-86F1-AA3111D2BEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A365B4C-7A69-431B-86F1-AA3111D2BEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A365B4C-7A69-431B-86F1-AA3111D2BEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D244981F-A317-4D47-92A4-C02BE3BBC5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D244981F-A317-4D47-92A4-C02BE3BBC5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D244981F-A317-4D47-92A4-C02BE3BBC5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D244981F-A317-4D47-92A4-C02BE3BBC5E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDE4EBD0-56B5-4EBD-B8F1-A44CC13785DB} = {041D5113-5A0E-4DD2-A250-87F012A6F741}
+		{B40CE5D3-08D8-4D5D-BA1A-8F3FB3673C43} = {ADA301D4-394A-4E6B-BE4B-838BBA373258}
+		{4FA7B3FD-4552-4263-B63A-B4668E1271B5} = {ADA301D4-394A-4E6B-BE4B-838BBA373258}
+		{72F3C951-2E43-46D7-8E04-C2016F8BD33A} = {07FD5F7A-43E6-4DC9-B89B-02709CB8154C}
+		{5431B6FE-9593-4FFE-AABF-9748E21AD41F} = {B45C79D5-75C8-4787-B35C-044FA6F23F59}
+		{3A365B4C-7A69-431B-86F1-AA3111D2BEB6} = {AF23B3FA-6DBE-4D32-B1F3-B14F9660AE39}
+		{D244981F-A317-4D47-92A4-C02BE3BBC5E8} = {4FA7B3FD-4552-4263-B63A-B4668E1271B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF8D0EF3-EC53-4BD0-A90A-C3E8E4071266}

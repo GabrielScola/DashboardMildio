@@ -18,7 +18,7 @@ namespace DashboardMildio.Controllers
             return View();
         }
 
-        [HttpPost]
+        [Route("/login")]
         public IActionResult Login(LoginModel login)
         {
             if (login.usuario != null && 
@@ -29,11 +29,7 @@ namespace DashboardMildio.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            return RedirectToAction("LoginError");
-        }
-        public ActionResult LoginError()
-        {
-            return View();
+            return Redirect("/");
         }
 
         public IActionResult Register()

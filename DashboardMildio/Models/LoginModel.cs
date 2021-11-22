@@ -5,10 +5,10 @@ namespace DashboardMildio.Models
 {
     public class LoginModel
     {
-        [Required]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string usuario { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string senha { get; set; }
 
     }

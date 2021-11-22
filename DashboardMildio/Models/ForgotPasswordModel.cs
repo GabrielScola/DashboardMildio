@@ -5,7 +5,7 @@ namespace DashboardMildio.Models
 {
     public class ForgotPasswordModel
     {
-        [Required]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string email { get; set; }
 
     }

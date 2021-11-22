@@ -1,0 +1,69 @@
+@model List<DadosModel>
+@{
+    ViewData["Title"] = "Visualizar dados";
+}
+
+<h1>Visualizar dados</h1>
+@Html.ActionLink("Cadastrar", "formulario", "produto")
+
+<div class="container">
+    <div>
+        <label for="search">Pesquisar</label>
+        <input type="text" id="search" />
+        <button onclick="Pesquisar()">Pesquisar</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Temperatura</th>
+                <th>Chuva</th>
+                <th>Humidade</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Temperatura</td>
+                <td>@item.Chuva</td>
+                <td>@item.Humidade</td>
+                <td>
+                    <a href="dados/editar/@item.Id">Editar</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    function Pesquisar() {
+        var url = "/dados/pesquisar-dados"
+        var termo = $('#search').val();
+
+        var par = { termoPesquisar: termo };
+        $.post(url, par, RetornaDados);
+    }
+
+    function RetornaDados(result) {
+        var tableBody = document.getElementById("tableBody");
+        tableBody.innerHTML = "";
+        result.forEach(showResult);
+    }
+
+    function showResult(elemento) {
+        var tableBody = document.getElementById("tableBody");
+        var strTabela = "";
+        strTabela = strTabela + "<tr>";
+        strTabela = strTabela + "<td>" + elemento.id + "</td>";
+        strTabela = strTabela + "<td>" + elemento.temperatura + "</td>";
+        strTabela = strTabela + "<td>" + elemento.chuva + "</td>";
+        strTabela = strTabela + "<td>" + elemento.humidade + "</td>";
+        strTabela = strTabela + "</tr>";
+        tableBody.innerHTML = tableBody.innerHTML + strTabela;
+    }
+</script>
