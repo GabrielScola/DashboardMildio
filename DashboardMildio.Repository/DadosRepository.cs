@@ -25,10 +25,10 @@ namespace DashboardMildio.Repository
                 NpgsqlCommand comando = new NpgsqlCommand();
                 comando.Connection = conn;
 
-                comando.CommandText = "INSERT INTO dados (id, tempteratura, chuva, humidade, data) VALUES (@id, @tempteratura, @chuva, @humidade, @data);";
+                comando.CommandText = "INSERT INTO dados (id, temperatura, chuva, humidade, data) VALUES (@id, @temperatura, @chuva, @humidade, @data);";
 
                 comando.Parameters.AddWithValue("id", dados.Id);
-                comando.Parameters.AddWithValue("tempteratura", dados.Temperatura);
+                comando.Parameters.AddWithValue("temperatura", dados.Temperatura);
                 comando.Parameters.AddWithValue("chuva", dados.Chuva);
                 comando.Parameters.AddWithValue("humidade", dados.Humidade);
                 comando.Parameters.AddWithValue("data", dados.Data);

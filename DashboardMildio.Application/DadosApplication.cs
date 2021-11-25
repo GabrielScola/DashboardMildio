@@ -28,6 +28,7 @@ namespace DashboardMildio.Application
         {
             Dados dados = DadosAdapter.ParaDadosDominio(dadosDto);
             dados.Id = Guid.NewGuid();
+            dados.Data = DateTime.Now;
             dadosRepository.Add(dados);
             return dados.Id;
         }
