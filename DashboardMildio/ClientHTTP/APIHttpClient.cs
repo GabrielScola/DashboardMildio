@@ -38,7 +38,7 @@ namespace DashboardMildio.ClientHTTP
             }
         }
 
-        public Guid Post<T>(string action, T data)
+        public T Post<T>(string action, T data)
         {
             using (var client = new HttpClient())
             {
@@ -49,7 +49,7 @@ namespace DashboardMildio.ClientHTTP
                 HttpResponseMessage response = client.PostAsJsonAsync(action, data).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    var sucesso = response.Content.ReadAsAsync<Guid>().Result;
+                    var sucesso = response.Content.ReadAsAsync<T>().Result;
                     return sucesso;
                 }
                 else

@@ -6,11 +6,6 @@
 <h1>Visualizar dados</h1>
 
 <div class="container">
-    <div>
-        <label for="search">Pesquisar</label>
-        <input type="text" id="search" />
-        <button onclick="Pesquisar()">Pesquisar</button>
-    </div>
     <table>
         <thead>
             <tr>
@@ -18,7 +13,6 @@
                 <th> Temperatura </th>
                 <th> Chuva </th>
                 <th> Humidade </th>
-                <th> Ação </th>
             </tr>
         </thead>
         <tbody id="tableBody">
@@ -29,9 +23,6 @@
                 <td>@item.Temperatura</td>
                 <td>@item.Chuva</td>
                 <td>@item.Humidade</td>
-                <td>
-                    <a href="dados/editar/@item.Id">Editar</a>
-                </td>
             </tr>
             }
         </tbody>
@@ -41,13 +32,6 @@
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script>
-    function Pesquisar() {
-        var url = "/dados/pesquisar-dados"
-        var termo = $('#search').val();
-
-        var par = { termoPesquisar: termo };
-        $.post(url, par, RetornaDados);
-    }
 
     function RetornaDados(result) {
         var tableBody = document.getElementById("tableBody");

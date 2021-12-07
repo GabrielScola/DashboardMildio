@@ -47,7 +47,7 @@ namespace DashboardMildio.Controllers
             if (ModelState.IsValid)
             {
                 APIHttpClient clienteHTTP = new APIHttpClient("http://localhost:45945/api/");
-                Guid id = clienteHTTP.Post<DadosModel>(@"dados", dados);
+                //Guid id = clienteHTTP.Post<DadosModel>(@"dados", dados);
                 return RedirectToAction("Index");
             } else
             {

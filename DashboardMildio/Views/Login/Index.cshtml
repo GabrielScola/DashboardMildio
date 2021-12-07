@@ -1,4 +1,4 @@
-@model DashboardMildio.Models.LoginModel
+@model DashboardMildio.Models.UsuarioModel
 
 @{
     ViewData["Title"] = "Login";
@@ -30,9 +30,9 @@
         <div class="card">
             <div class="card-body login-card-body">
 
-                <form asp-action="Login">
+                <form method="post" action="/login/autenticar">
                     <div class="input-group mb-3">
-                        <input asp-for="usuario" class="form-control" id="inputUsuario" placeholder="Usuario">
+                        <input asp-for="User" class="form-control" id="inputUsuario" placeholder="Usuario">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input asp-for="senha" type="password" id="inputSenha" class="form-control" placeholder="Senha">
+                        <input asp-for="Senha" type="password" id="inputSenha" class="form-control" placeholder="Senha">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

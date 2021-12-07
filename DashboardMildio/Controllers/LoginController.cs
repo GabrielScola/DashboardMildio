@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DashboardMildio.Models;
+using DashboardMildio.ClientHTTP;
+using System;
 
 namespace DashboardMildio.Controllers
 {
@@ -18,18 +20,29 @@ namespace DashboardMildio.Controllers
             return View();
         }
 
-        [Route("/login")]
-        public IActionResult Login(LoginModel login)
+        public IActionResult Login()
         {
-            if (login.usuario != null && 
-                login.usuario == "usu" &&
-                login.senha != null &&
-                login.senha == "senha")
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            return View();
+        }
 
-            return Redirect("/");
+        public IActionResult Autenticar(string usuario, string senha)
+        {
+            UsuarioModel user = new UsuarioModel()
+            {
+                User = usuario,
+                Senha = senha
+            };
+
+            APIHttpClient clienteHTTP = new APIHttpClient("http://localhost:45945/api/");
+            try
+            {
+                user = clienteHTTP.Post<UsuarioModel>(@"Login", user);
+                return RedirectToAction("Home", "Index");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("");
+            }
         }
 
         public IActionResult Register()
