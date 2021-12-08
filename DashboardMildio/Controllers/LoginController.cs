@@ -25,19 +25,19 @@ namespace DashboardMildio.Controllers
             return View();
         }
 
-        public IActionResult Autenticar(string usuario, string senha)
+        public IActionResult Autenticar(string user, string senha)
         {
-            UsuarioModel user = new UsuarioModel()
+            UsuarioModel userModel = new UsuarioModel()
             {
-                User = usuario,
+                User = user,
                 Senha = senha
             };
 
             APIHttpClient clienteHTTP = new APIHttpClient("http://localhost:45945/api/");
             try
             {
-                user = clienteHTTP.Post<UsuarioModel>(@"Login", user);
-                return RedirectToAction("Home", "Index");
+                userModel = clienteHTTP.Post<UsuarioModel>(@"Login", userModel);
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception)
             {

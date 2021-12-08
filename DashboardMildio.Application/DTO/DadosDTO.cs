@@ -11,7 +11,7 @@ namespace DashboardMildio.Application.DTO
         public Guid Id { get; set; }
         public int Temperatura { get; set; }
         public int Chuva { get; set; }
-        public int Humidade { get; set; }
+        public int Umidade { get; set; }
         public DateTime Data { get; set; }
     }
 }

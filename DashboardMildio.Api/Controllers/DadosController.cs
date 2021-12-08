@@ -43,7 +43,7 @@ namespace DashboardMildio.Api.Controllers
                         Id = dadosDTO.Id,
                         Temperatura = dadosDTO.Temperatura,
                         Chuva = dadosDTO.Chuva,
-                        Humidade = dadosDTO.Humidade,
+                        Humidade = dadosDTO.Umidade,
                         Data = dadosDTO.Data
                     });
                 }
@@ -65,7 +65,7 @@ namespace DashboardMildio.Api.Controllers
                     Id = Guid.NewGuid(),
                     Temperatura = dados.Temperatura,
                     Chuva = dados.Chuva,
-                    Humidade = dados.Humidade,
+                    Umidade = dados.Humidade,
                     Data = dados.Data
                 };
 
@@ -88,7 +88,7 @@ namespace DashboardMildio.Api.Controllers
                     Id = dados.Id,
                     Temperatura = dados.Temperatura,
                     Chuva = dados.Chuva,
-                    Humidade = dados.Humidade,
+                    Umidade = dados.Humidade,
                     Data = dados.Data
                 };
 

@@ -26,6 +26,7 @@
     <!-- summernote -->
     <link rel="stylesheet" href="~/Front/plugins/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" href="~/Front/plugins/clima/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -197,6 +198,165 @@
     <script src="~/Front/plugins/flot/flotchart.js"></script>
     <script src="~/Front/plugins/clima/script.js"></script>
     @RenderSection("scripts", required: false)
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/home/jsontemperatura",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (mems) {
+                var aData = mems;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Temperatura",
+                        data: aDatasets1,
+                        fill: false,
+                        lineTension: 0.5,
+                        borderWidth: 2,
+                        backgroundColor: "rgba(80,255,70,2)",
+                        borderColor: "rgba(80,255,70,1)",
+                        pointRadius: 4.5,
+                        pointBackgroundColor: "rgba(30,170,30,1)",
+                        pointBorderColor: "rgba(255,255,255,0.8)",
+                        pointHoverRadius: 3,
+                        pointHoverBackgroundColor: "rgba(2,117,0,1)",
+                        pointHitRadius: 10,
+                        pointBorderWidth: 2,
+                    }]
+                };
+
+                var ctx = $("#graficoTemperatura").get(0).getContext("2d");
+                var myNewChart = new Chart(ctx, {
+                    type: 'line',
+                    data: dataT,
+                    fill: true,
+                    borderWidth: 0.1,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Temperatura atual' },
+                        legend: { position: 'bottom' },
+                        padding: 0,
+                        scales: {
+                            xAxes: [{ gridLines: { display: true }, display: true, scaleLabel: { display: true, labelString: '' } }],
+                            yAxes: [{
+                                gridLines: { display: false }, display: true, scaleLabel: { display: true, labelString: '' },
+                                ticks: { stepSize: 50, beginAtZero: true }
+                            }]
+                        },
+                    }
+                });
+            }
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/home/jsonchuva",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (mems) {
+                var aData = mems;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Chuva",
+                        data: aDatasets1,
+                        fill: false,
+                        borderWidth: 0.1,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(2,117,216,1)",
+                        borderColor: "rgba(255,255,255,1)",
+                        pointRadius: 6.5,
+                        pointBackgroundColor: "rgba(2,117,216,1)",
+                        pointBorderColor: "rgba(255,255,255,0.8)",
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(2,117,216,1)",
+                        pointHitRadius: 10,
+                        pointBorderWidth: 2,
+                    }]
+                };
+
+                var ctx = $("#graficoChuva").get(0).getContext("2d");
+                var myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    fill: false,
+                    borderWidth: 0.1,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Índice de Chuva' },
+                        legend: { position: 'bottom' },
+                        padding: 0,
+                        scales: {
+                            xAxes: [{ gridLines: { display: true }, display: true, scaleLabel: { display: true, labelString: '' } }],
+                            yAxes: [{
+                                gridLines: { display: false }, display: true, scaleLabel: { display: true, labelString: '' },
+                                ticks: { stepSize: 50, beginAtZero: true }
+                            }]
+                        },
+                    }
+                });
+            }
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/home/jsonumidade",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (mems) {
+                var aData = mems;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Umidade",
+                        data: aDatasets1,
+                        fill: true,
+                        showLine: true,
+                        borderWidth: 2,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(220,80,85,1)",
+                        borderColor: "rgba(220,80,85,1)",
+                        pointRadius: 4.5,
+                        pointBackgroundColor: "rgba(255,40,40,1)",
+                        pointBorderColor: "rgba(255,255,255,0.8)",
+                        pointHoverRadius: 3,
+                        pointHoverBackgroundColor: "rgba(255,40,40,1)",
+                        pointHitRadius: 10,
+                        pointBorderWidth: 2,
+                    }]
+                };
+
+                var ctx = $("#graficoUmidade").get(0).getContext("2d");
+                var myNewChart = new Chart(ctx, {
+                    type: 'line',
+                    data: dataT,
+                    fill: false,
+                    showLine: true,
+                    borderWidth: 0.1,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Índice de Umidade' },
+                        legend: { position: 'bottom' },
+                        padding: 0,
+                        scales: {
+                            xAxes: [{ gridLines: { display: true }, display: true, scaleLabel: { display: true, labelString: '' } }],
+                            yAxes: [{
+                                gridLines: { display: false }, display: true, scaleLabel: { display: true, labelString: '' },
+                                ticks: { stepSize: 50, beginAtZero: true }
+                            }]
+                        },
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 

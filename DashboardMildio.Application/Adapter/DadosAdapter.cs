@@ -17,7 +17,7 @@ namespace DashboardMildio.Application.Adapter
                 Id = dados.Id,
                 Chuva = dados.Chuva,
                 Temperatura = dados.Temperatura,
-                Humidade = dados.Humidade,
+                Umidade = dados.Humidade,
                 Data = dados.Data
             };
         }
@@ -29,7 +29,7 @@ namespace DashboardMildio.Application.Adapter
                 Id = dados.Id,
                 Chuva = dados.Chuva,
                 Temperatura = dados.Temperatura,
-                Humidade = dados.Humidade,
+                Humidade = dados.Umidade,
                 Data = dados.Data
             };
         }

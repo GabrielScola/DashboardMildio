@@ -125,10 +125,10 @@ namespace DashboardMildio.Repository
                 comando.CommandText = "UPDATE dados SET temperatura = @temperatura, chuva = @chuva, humidade = @humidade, data = @data WHERE id = @id;";
 
                 comando.Parameters.AddWithValue("id", dados.Id);
-                comando.Parameters.AddWithValue("temperature", dados.Temperatura);
-                comando.Parameters.AddWithValue("rain", dados.Chuva);
-                comando.Parameters.AddWithValue("humidity", dados.Humidade);
-                comando.Parameters.AddWithValue("date", dados.Data);
+                comando.Parameters.AddWithValue("temperatura", dados.Temperatura);
+                comando.Parameters.AddWithValue("chuva", dados.Chuva);
+                comando.Parameters.AddWithValue("humidade", dados.Humidade);
+                comando.Parameters.AddWithValue("data", dados.Data);
 
                 comando.ExecuteNonQuery();
             }

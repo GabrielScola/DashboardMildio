@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Dashboard";
 }
+<html>
 <h2>@ViewBag.Title</h2>
 <center><div class="warning"><br /></div></center>
 <!-- Small boxes (Stat box) -->
@@ -70,7 +71,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-8">
+            @*<div class="col-8">
                 <!-- interactive chart -->
                 <div class="card card-primary card-outline">
                     <div class="card-header">
@@ -86,8 +87,8 @@
                 </div>
                 <!-- /.card -->
 
-            </div>
-            <div class="col-4">
+            </div>*@
+            @*<div class="col-4">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
                         <h3 class="card-title">
@@ -109,7 +110,48 @@
                     </div>
                     <!-- /.card -->
                 </div>
-
+            </div>    *@ 
+            <div class="col-xl-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Temperatura
+                    </div>
+                    <canvas id="graficoTemperatura"
+                            width="441"
+                            height="130"
+                            class="chartjs-render-monitor"
+                            style="
+                                display: block;">
+                    </canvas>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Chuva
+                    </div>
+                    <canvas id="graficoChuva"
+                            width="441"
+                            height="100"
+                            class="chartjs-render-monitor"
+                            style="
+                                display: block;">
+                    </canvas>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Umidade
+                    </div>
+                    <canvas id="graficoUmidade"
+                            width="441"
+                            height="150"
+                            class="chartjs-render-monitor"
+                            style="
+                                display: block;">
+                    </canvas>
+                </div>
             </div>
         </div>
         <!-- /.row -->
